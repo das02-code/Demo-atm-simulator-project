@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulator — Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-screen">
+            <div class="top-bar">
+                <h2>🏧 Welcome, <span id="userName">User</span></h2>
+                <button class="btn-logout" id="logoutBtn">LOGOUT</button>
+            </div>
+
+            <div class="balance-card">
+                <p>Available Balance</p>
+                <h1 id="balanceDisplay">₹0.00</h1>
+                <p class="acc-no">A/C: <span id="accDisplay">----</span></p>
+            </div>
+
+            <div class="action-grid">
+                <button class="action-btn" id="btnWithdraw">💸 Withdraw</button>
+                <button class="action-btn" id="btnDeposit">💰 Deposit</button>
+                <button class="action-btn" id="btnStatement">📄 Mini Statement</button>
+                <button class="action-btn" id="btnBalance">🔄 Refresh</button>
+            </div>
+
+            <div id="msg" class="toast"></div>
+
+            <!-- Modal -->
+            <div class="modal-overlay" id="modal">
+                <div class="modal-box" id="modalBox"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
